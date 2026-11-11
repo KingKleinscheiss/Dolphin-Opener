@@ -1,0 +1,26 @@
+{
+  "dolphin": {
+    "baseUrl": "http://localhost:3001/v1.0",
+    "token": ""
+  },
+  "proxies": [
+    { "id": "proxy-1", "label": "Proxy 1", "dolphinProxyId": "", "changeIpUrl": null },
+    { "id": "proxy-2", "label": "Proxy 2", "dolphinProxyId": "", "changeIpUrl": null },
+    { "id": "proxy-3", "label": "Proxy 3", "dolphinProxyId": "", "changeIpUrl": null },
+    { "id": "proxy-4", "label": "Proxy 4", "dolphinProxyId": "", "changeIpUrl": null },
+    { "id": "proxy-5", "label": "Proxy 5", "dolphinProxyId": "", "changeIpUrl": null },
+    { "id": "proxy-6", "label": "Proxy 6", "dolphinProxyId": "", "changeIpUrl": null },
+    { "id": "proxy-7", "label": "Proxy 7", "dolphinProxyId": "", "changeIpUrl": null },
+    { "id": "proxy-8", "label": "Proxy 8", "dolphinProxyId": "", "changeIpUrl": null },
+    { "id": "proxy-9", "label": "Proxy 9 (Ersatz)", "dolphinProxyId": "", "changeIpUrl": null },
+    { "id": "proxy-10", "label": "Proxy 10 (Ersatz)", "dolphinProxyId": "", "changeIpUrl": null }
+  ],
+  "lastFilter": { "mode": "tag", "tagIds": [], "folderIds": [] },
+  "targetDomain": "https://example.com",
+  "slotCount": 10,
+  "foregroundCount": 4,
+  "resetTimeoutMs": 120000,
+  "resetMaxRetries": 2,
+  "postResetSettleMs": 5000,
+  "autoFocusOnPromote": false
+}

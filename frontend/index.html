@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dolphin Opener</title>
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <h1>Dolphin Opener</h1>
+    <div class="run-status" id="runStatus">gestoppt</div>
+  </header>
+
+  <main>
+    <section class="panel" id="controlPanel">
+      <h2>Steuerung</h2>
+      <div class="field-row">
+        <label for="targetDomain">Ziel-Domain</label>
+        <input id="targetDomain" type="text" placeholder="https://example.com" />
+      </div>
+
+      <div class="field-row">
+        <label>Filter-Modus</label>
+        <div class="radio-group" id="filterMode">
+          <label><input type="radio" name="filterMode" value="tag" checked /> Tags</label>
+          <label><input type="radio" name="filterMode" value="folder" /> Ordner</label>
+          <label><input type="radio" name="filterMode" value="both" /> Beides</label>
+        </div>
+      </div>
+
+      <div class="field-row">
+        <label for="tagSelect">Tags</label>
+        <select id="tagSelect" multiple size="4"></select>
+      </div>
+
+      <div class="field-row">
+        <label for="folderSelect">Ordner</label>
+        <select id="folderSelect" multiple size="4"></select>
+      </div>
+
+      <div class="field-row two-col">
+        <div>
+          <label for="slotCount">Slots (gesamt)</label>
+          <input id="slotCount" type="number" min="1" max="10" value="10" />
+        </div>
+        <div>
+          <label for="foregroundCount">Vordergrund-Größe</label>
+          <input id="foregroundCount" type="number" min="1" max="10" value="4" />
+        </div>
+      </div>
+
+      <div class="field-row">
+        <label><input id="autoFocus" type="checkbox" /> Beim Beförderung automatisch fokussieren</label>
+      </div>
+
+      <div class="button-row">
+        <button id="startBtn" class="primary">Lauf starten</button>
+        <button id="stopBtn" class="danger">Lauf stoppen</button>
+        <button id="reloadFiltersBtn">Tags/Ordner neu laden</button>
+      </div>
+      <div id="controlError" class="error-text"></div>
+    </section>
+
+    <section class="panel" id="queuePanel">
+      <h2>Fortschritt</h2>
+      <div id="queueProgress">0 / 0 fertig</div>
+      <div id="queueNext"></div>
+    </section>
+
+    <section class="panel" id="proxyPanel">
+      <h2>Proxy-Gesundheit</h2>
+      <div id="proxyStrip" class="proxy-strip"></div>
+      <details id="proxySettings">
+        <summary>Proxy-Einstellungen bearbeiten</summary>
+        <div id="proxyList"></div>
+        <button id="addProxyBtn">+ Proxy hinzufügen</button>
+      </details>
+    </section>
+
+    <section class="panel" id="dolphinPanel">
+      <details>
+        <summary>Dolphin-Anty-Verbindung</summary>
+        <div class="field-row">
+          <label for="dolphinBaseUrl">Local-API-URL</label>
+          <input id="dolphinBaseUrl" type="text" placeholder="http://localhost:3001/v1.0" />
+        </div>
+        <div class="field-row">
+          <label for="dolphinToken">API-Token (falls benötigt)</label>
+          <input id="dolphinToken" type="password" />
+        </div>
+        <button id="saveDolphinBtn">Verbindung speichern</button>
+      </details>
+    </section>
+
+    <section class="panel wide" id="slotPanel">
+      <h2>Slots</h2>
+      <div id="slotGrid" class="slot-grid"></div>
+    </section>
+  </main>
+
+  <script type="module" src="./main.ts"></script>
+</body>
+</html>
